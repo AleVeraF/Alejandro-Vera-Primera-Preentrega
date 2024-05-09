@@ -1,6 +1,3 @@
-@import url("https://fonts.googleapis.com/css?family=Roboto:300,300italic,700,700italic");
-@import url("https://cdnjs.cloudflare.com/ajax/libs/milligram/1.4.1/milligram.css");
-
 body {
     margin: 0;
     padding: 0;
@@ -9,7 +6,7 @@ body {
 }
 
 nav {
-    text-align: center; 
+    text-align: center;
     align-items: center;
     padding: 10px;
     font-size: 30px;
@@ -17,13 +14,79 @@ nav {
     height: 100px;
     width: 100%;
     background-color: brown;
+
+    p {
+        font-size: 45px;
+        -webkit-text-stroke: black 0.2px;
+        color: aliceblue;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
 }
 
-html {
-    color-scheme: dark;
+.Hero {
+    display: flex;
+    flex-direction: column;
+    height: 850px;
+    width: 100%;
+
+    .HeroConten {
+        height: 850px;
+        width: 100%;
+        background-image: url('../image/fondocoches.jpg');
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+        background-size:cover;
+        object-fit: cover;
+        opacity: 1;
+        text-align: center;
+
+        img {
+            display: none;
+        }
+
+        h1 {
+            font-size: 70px;
+            -webkit-text-stroke: black 0.2px;
+            color: aliceblue;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        p {
+            font-size: 45px;
+            -webkit-text-stroke: white 0.5px;
+
+        }
+
+    }
+
+    .Conten {
+        height: 300px;
+        width: 100%;
+        text-align: center;
+        h2 {
+            font-size: 70px;
+            -webkit-text-stroke: black 0.5px;
+            color: aliceblue;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+
+        }
+
+    }
 }
 
-body {
-    padding: 20px;
-    color: white !important;
+footer {
+    text-align: center;
+    align-items: center;
+    padding: 10px;
+    font-size: 30px;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    height: 100px;
+    width: 100%;
+    background-color: brown;
+    h3 {
+        font-size: 45px;
+        -webkit-text-stroke: black 0.2px;
+        color: aliceblue;
+        font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+
 }
