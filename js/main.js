@@ -1,8 +1,8 @@
-const interes = 1.18;
+/* const interes = 1.18;
 const Ferrari = 80000;
 const Toyota = 28000;
 const Hyunday = 17000;
-/* toFixed es para redondear un importe*/
+/* toFixed es para redondear un importe
 let nombreCompleto = "";
 
 function indicaTusGanancias(gananciasMensuales) {
@@ -39,4 +39,26 @@ function CuotasCoche (interes) {
 
     }
 }
-indicaTusGanancias ()
+indicaTusGanancias () */
+
+/*ESTOS SON ARRAY*/ const cochesGamaalta = ['Ferrari', 'Bugati', 'Tesla', 'Laborgini']
+                   
+/*ESTOS SON ARRAY*/ const cochesGamamedia = ['Toyota', 'Volswagen', 'Peagot', 'Audi', 'AlfaRomeo',];
+
+/*ESTOS SON ARRAY*/ const cochesGamabaja = ['Hyundai', 'Kia', 'MG', 'Fiat'];
+
+function cochesdisponibles () {
+
+    for (let i= 0; i < cochesGamaalta.length; i++)
+        console.log(cochesGamaalta [i])
+
+}
+
+function agregaCocheGamaAlta () {
+    let nuevoCoche = prompt ("Ingresa el nuevo coche")
+   /*Con el método push agregas nuevo producto al ARRAY*/ */ cochesGamaalta.push (nuevoCoche)
+}
+
+agregaCocheGamaAlta ()
+
+// console.table (array) nos da los datons en la consola en una tabla
