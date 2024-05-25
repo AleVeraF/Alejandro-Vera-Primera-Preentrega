@@ -39,26 +39,89 @@ function CuotasCoche (interes) {
 
     }
 }
-indicaTusGanancias () */
 
-/*ESTOS SON ARRAY*/ const cochesGamaalta = ['Ferrari', 'Bugati', 'Tesla', 'Laborgini']
-                   
+
+
+/*ESTOS SON ARRAY*/ const cochesGamaalta = ['Ferrari', 'Bugatti', 'Tesla', 'Laborgini']
+
 /*ESTOS SON ARRAY*/ const cochesGamamedia = ['Toyota', 'Volswagen', 'Peagot', 'Audi', 'AlfaRomeo',];
 
 /*ESTOS SON ARRAY*/ const cochesGamabaja = ['Hyundai', 'Kia', 'MG', 'Fiat'];
 
-function cochesdisponibles () {
 
-    for (let i= 0; i < cochesGamaalta.length; i++)
-        console.log(cochesGamaalta [i])
+
+const iva = 1.21
+const interes = 1.18;
+
+function CuotasCoche () {
+    let monto = prompt("Indica el monto que deseas financiar para la compra de tu coche")
+    let cuotas = prompt ("Indica en cuantas cuotas deseas pagar el coche")
+    let montoPagar = (parseInt (monto) * interes);
+    for (let i= 1; i<=cuotas; i++) {
+        console.log("Cuota " + i + " importe a pagar: " + (montoPagar / cuotas) .toFixed(2)+"€")
+
+    }
+}
+
+function cochesdisponibles() {
+
+    for (let i = 0; i < cochesGamaalta.length; i++)
+        console.log(cochesGamaalta[i])
 
 }
 
-function agregaCocheGamaAlta () {
-    let nuevoCoche = prompt ("Ingresa el nuevo coche")
-   /*Con el método push agregas nuevo producto al ARRAY*/ */ cochesGamaalta.push (nuevoCoche)
+function agregaCocheGamaAlta() {
+    let nuevoCoche = prompt("Ingresa el nuevo coche")
+   /*Con el método push agregas nuevo producto al ARRAY*/  cochesGamaalta.push(nuevoCoche)
 }
 
-agregaCocheGamaAlta ()
+/* agregaCocheGamaAlta () */
 
 // console.table (array) nos da los datons en la consola en una tabla
+
+const toyota = [
+    {codigo: 1, modelo: 'Corolla', gama: 'Media', año: 2025, importe: 35000 },
+    {codigo: 2, modelo: 'Yaris', gama: 'Media', año: 2023, importe: 18000 },
+    {codigo: 3, modelo: 'Yaris Cross', gama: 'Media', año: 2024, importe: 26000 }
+
+]
+const bugatti = [
+    {codigo: 4, modelo: 'Divo', gama: 'Alta', año: 2024, importe: 5000000 },
+    {codigo: 5, modelo: 'Chiron', gama: 'Alta', año: 2023, importe: 2000000 }
+
+]
+
+const kia = [
+    {codigo: 6, modelo: 'Rio', gama: 'Baja', año: 2023, importe: 15000 },
+    {codigo: 7, modelo: 'Ceed', gama: 'Baja', año: 2024, importe: 250000},
+    {codigo: 8, modelo: 'Sportage', gama: 'Baja', año: 2025, importe: 34000}
+
+]
+
+const compra =[]
+
+function indicaCodigoCoche(codigo) {
+    let modeloSeleccionado = toyota.find (coche => coche.codigo === codigo)
+    return modeloSeleccionado
+}
+
+function pago () {
+    let codigo = prompt ("El código del coche que deseas:");
+    let cocheElegido = indicaCodigoCoche (parseInt(codigo));
+    if (cocheElegido === undefined) {
+        alert ("No existe un coche con el código seleccionado")
+    } else {
+        let importeTotal = cocheElegido.importe * iva;
+        compra.push (cocheElegido)
+        alert ("Se ha agregado el coche: "+ cocheElegido.modelo + " a la compra, y el importe total a pagar será de:" + importeTotal + "€ (solo para pagos de contado)")
+        let respuesta = confirm ("¿Te gustaría financiar el coche?")
+        if (respuesta === true) {
+            CuotasCoche ()
+
+        } else {
+            console.log ("EL coche elegido es el: " + cocheElegido.modelo + " y el importe total a pagar es: " + importeTotal + " €")
+        }
+
+    }
+
+}
